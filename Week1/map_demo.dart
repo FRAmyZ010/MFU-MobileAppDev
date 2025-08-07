@@ -1,23 +1,20 @@
-void main(){
+void main() {
   //Map is close to JS object, key:value
-  Map<String, dynamic> student = {"name":"Peter","age":22,"gpax":3.65};
-  print(student["name"]);
+  Map<String, dynamic> students = {"name": "Peter", "age": 22, "gpax": 3.65};
+  print(students["name"]);
 
   //List of Map
   List student = [
-      {"name":"Peter","age":22,"gpax":3.95},
-      {"name":"Mary","age":19,"gpax":4.00}
+    {"name": "Peter", "age": 22, "gpax": 3.95},
+    {"name": "Mary", "age": 19, "gpax": 4.00},
   ];
 
-  int age = 0;
-  int allAge = 0;
-  int avg = 0;
+  double avg = 0;
 
-  for(int i=o;i<student.length;i++){
-    age=student[i]["age"];
-    allAge+=age;
+  for (int i = 0; i < student.length;i++) {
+    avg += student[i]["age"];
   }
-  avg = allAge / student.length;
-  print("Age Average : $avg")
+  avg /= student.length;
 
+  print("Age Average : $avg");
 }
