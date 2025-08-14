@@ -31,7 +31,7 @@ import 'dart:convert'; // for jsonDecode
 void main() async {
   print("Getting data ...");
   // URL
-  Uri uri = Uri.parse('https://jsonplaceholder.typicode.com/users');
+  Uri uri = Uri.parse('http://localhost:3000/');
   http.Response response = await http.get(uri);
   // response = status code + body
   // check status code
@@ -42,11 +42,11 @@ void main() async {
     // response.body is JSON String
     // convert JSON array to List
     final result = jsonDecode(response.body) as List;
-    print("ID : ${result[0]['id']}");
-    print("NAME : ${result[0]['name']}");
-    print("EMAIL : ${result[0]['email']}");
-    // show user's company name
-    print("COMPANY : ${result[0]['company']['name']}");
+    // loop
+    for (Map exp in result) {
+      print(exp);
+      
+    }
   } else {
     print(response.statusCode);
     print('Connection failed');
