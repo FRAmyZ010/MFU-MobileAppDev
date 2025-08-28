@@ -26,7 +26,7 @@ void main() {
 
   List<int> cart = [80, 55, 42];
   // find total price
-  
+
   int totalPrice = 0;
   for (int i = 0; i < cart.length; i++) {
     totalPrice += cart[i]; //totalPrice = totalPrice + cart[i]
