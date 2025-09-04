@@ -24,8 +24,23 @@ class _InputDemoState extends State<InputDemo> {
       appBar: AppBar(title: Text('Input Demo')),
       body: Column(
         children: [
-          TextField(controller: tcName),
+          Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: TextField(
+              controller: tcName,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Enter your name',
+                suffixIcon: IconButton(
+                  onPressed: tcName.clear,
+                  icon: Icon(Icons.clear),
+                ),
+              ),
+            ),
+          ),
+
           ElevatedButton(onPressed: updateMessage, child: Text('OK')),
+          SizedBox(height: 16),
           Text(msg),
         ],
       ),
