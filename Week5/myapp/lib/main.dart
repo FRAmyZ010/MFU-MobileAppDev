@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:myapp/week04/counter.dart';
+import 'package:myapp/week04/input_demo.dart';
 
 void main() {
-  runApp(MaterialApp(home: Counter()));
+  runApp(MaterialApp(home: InputDemo()));
 }
