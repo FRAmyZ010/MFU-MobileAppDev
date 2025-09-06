@@ -18,9 +18,7 @@ class _LoginSystemState extends State<LoginSystem> {
   TextEditingController tcName = TextEditingController();
 
   void updateMessage() {
-    setState(() {
-      
-    });
+    setState(() {});
   }
 
   @override
@@ -30,28 +28,33 @@ class _LoginSystemState extends State<LoginSystem> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(50.0),
+            padding: const EdgeInsets.only(
+              left: 15,
+              right: 15,
+              bottom: 10,
+              top: 20,
+            ),
             child: TextField(
-              controller: tcName,
+              controller: tcUser,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Enter your name',
+                labelText: 'Username',
                 suffixIcon: IconButton(
-                  onPressed: tcName.clear,
+                  onPressed: tcUser.clear,
                   icon: Icon(Icons.clear),
                 ),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(50.0),
+            padding: const EdgeInsets.only(left: 15, right: 15, bottom: 20),
             child: TextField(
-              controller: tcName,
+              controller: tcPass,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Enter your name',
+                labelText: 'Password',
                 suffixIcon: IconButton(
-                  onPressed: tcName.clear,
+                  onPressed: tcPass.clear,
                   icon: Icon(Icons.clear),
                 ),
               ),
@@ -62,7 +65,6 @@ class _LoginSystemState extends State<LoginSystem> {
           SizedBox(height: 16),
           Text(msg),
         ],
-        
       ),
     );
   }
