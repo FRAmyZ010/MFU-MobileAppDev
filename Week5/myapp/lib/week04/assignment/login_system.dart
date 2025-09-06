@@ -17,8 +17,22 @@ class _LoginSystemState extends State<LoginSystem> {
   TextEditingController tcPass = TextEditingController();
   TextEditingController tcName = TextEditingController();
 
+  // Authorization system
+
+  bool checkLogin(String username, String password) {
+    return username == user && password == pass;
+  }
+
   void updateMessage() {
-    setState(() {});
+    if (checkLogin(tcUser.text, tcPass.text)) {
+      setState(() {
+        msg = 'Welcome $user';
+      });
+    } else {
+      setState(() {
+        msg = 'Wrong username or password';
+      });
+    }
   }
 
   @override
@@ -61,7 +75,7 @@ class _LoginSystemState extends State<LoginSystem> {
             ),
           ),
 
-          ElevatedButton(onPressed: updateMessage, child: Text('OK')),
+          ElevatedButton(onPressed: updateMessage, child: Text('Login')),
           SizedBox(height: 16),
           Text(msg),
         ],
