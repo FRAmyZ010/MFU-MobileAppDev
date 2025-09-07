@@ -15,10 +15,37 @@ class _CalculatorState extends State<Calculator> {
 
   // Sum function
 
-  void Sum() {}
+  void Sum(String n1, String n2) {
+    int? num1 = int.tryParse(n1);
+    int? num2 = int.tryParse(n2);
 
-  void Power() {}
-  void Clear() {}
+    if (num1 != null && num2 != null) {
+      setState(() {
+        String value = (num1 + num2).toString();
+        ans = "Result = $value";
+      });
+    }
+  }
+
+  void Power(String n1, String n2) {
+    int? num1 = int.tryParse(n1);
+    int? num2 = int.tryParse(n2);
+
+    if (num1 != null && num2 != null) {
+      setState(() {
+        String value = (num1 * num2).toString();
+        ans = "Result = $value";
+      });
+    }
+  }
+
+  void Clear() {
+    setState(() {
+      ans = "";
+      tcNum1.clear();
+      tcNum2.clear();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +54,12 @@ class _CalculatorState extends State<Calculator> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(),
+            padding: const EdgeInsets.only(
+              top: 10,
+              bottom: 20,
+              left: 20,
+              right: 20,
+            ),
             child: TextField(
               controller: tcNum1,
               decoration: InputDecoration(
@@ -37,9 +69,9 @@ class _CalculatorState extends State<Calculator> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(),
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 40),
             child: TextField(
-              controller: tcNum1,
+              controller: tcNum2,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: "Number 2",
@@ -48,7 +80,9 @@ class _CalculatorState extends State<Calculator> {
           ),
 
           ElevatedButton(
-            onPressed: Sum,
+            onPressed: () {
+              Sum(tcNum1.text, tcNum2.text);
+            },
             child: Text('Sum'),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.amber,
@@ -56,29 +90,38 @@ class _CalculatorState extends State<Calculator> {
             ),
           ),
           SizedBox(height: 16),
-          Text(ans),
 
           ElevatedButton(
-            onPressed: Power,
-            child: Text('Sum'),
+            onPressed: () {
+              Power(tcNum1.text, tcNum2.text);
+            },
+            child: Text('Power'),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromARGB(255, 7, 147, 255),
               foregroundColor: Colors.white,
             ),
           ),
           SizedBox(height: 16),
-          Text(ans),
 
           ElevatedButton(
-            onPressed: Clear,
-            child: Text('Sum'),
+            onPressed: () {
+              Clear();
+            },
+            child: Text('Clear'),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromARGB(255, 254, 0, 0),
               foregroundColor: Colors.white,
             ),
           ),
           SizedBox(height: 16),
-          Text(ans),
+          Text(
+            ans,
+            style: TextStyle(
+              color: Colors.red, // 🔴 เปลี่ยนสีข้อความ
+              fontSize: 20, // ปรับขนาดได้ด้วย
+              fontWeight: FontWeight.bold, // ตัวหนา
+            ),
+          ),
         ],
       ),
     );
