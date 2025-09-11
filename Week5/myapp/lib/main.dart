@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/week04/assignment/calculator.dart';
+import 'package:myapp/week05/multi_child_demo.dart';
 
 void main() {
-  runApp(MaterialApp(home: Calculator(), debugShowCheckedModeBanner: false));
+  runApp(
+    MaterialApp(home: MultiChildDemo(), debugShowCheckedModeBanner: false),
+  );
 }
