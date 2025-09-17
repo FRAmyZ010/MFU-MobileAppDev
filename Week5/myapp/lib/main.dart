@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/week05/asm/asm1.dart';
-import 'package:myapp/week05/random_demo.dart';
+import 'package:myapp/week05/asm/asm2.dart';
 
 void main() {
-  runApp(MaterialApp(home: Asm1(), debugShowCheckedModeBanner: false));
+  runApp(MaterialApp(home: Asm2(), debugShowCheckedModeBanner: false));
 }
