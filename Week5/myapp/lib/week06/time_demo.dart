@@ -10,7 +10,8 @@ class TimeDemo extends StatefulWidget {
 }
 
 class _TimeDemoState extends State<TimeDemo> {
-  String message = 'Start';
+  // String message = 'Start';
+  int count = 5;
 
   @override
   void initState() {
@@ -23,9 +24,18 @@ class _TimeDemoState extends State<TimeDemo> {
     //   });
     // });
 
-    Future.delayed(Duration(seconds: 3), () {
+    // Future.delayed(Duration(seconds: 3), () {
+    //   setState(() {
+    //     message = 'Stop';
+    //   });
+    // });
+
+    Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
-        message = 'Stop';
+        count--;
+        if (count == 0) {
+          timer.cancel();
+        }
       });
     });
   }
@@ -36,7 +46,7 @@ class _TimeDemoState extends State<TimeDemo> {
       body: SafeArea(
         child: Align(
           alignment: Alignment.topCenter,
-          child: Text(message, style: TextStyle(fontSize: 30)),
+          child: Text(count.toString(), style: TextStyle(fontSize: 30)),
         ),
       ),
     );
