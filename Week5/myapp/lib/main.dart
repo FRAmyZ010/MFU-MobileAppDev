@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/week04/input_demo.dart';
+import 'package:myapp/week06/button_demo.dart';
 
 void main() {
-  runApp(MaterialApp(home: InputDemo(), debugShowCheckedModeBanner: false));
+  runApp(MaterialApp(home: ButtonDemo(), debugShowCheckedModeBanner: false));
 }
