@@ -15,12 +15,12 @@ class BakingApp extends StatelessWidget {
         children: [
           //Image
           Expanded(
-            flex: 6,
+            flex: 6, //ใช้แบ่งสัดส่วนพื้นที่ 60%
             child: Image.asset('assets/images/baking.jpg', fit: BoxFit.cover),
           ),
           // Text with button
           Expanded(
-            flex: 4,
+            flex: 4, // ใช้แบ่งสัดส่วนพื้นที่ 40 %
             child: Column(
               children: [
                 Spacer(),
