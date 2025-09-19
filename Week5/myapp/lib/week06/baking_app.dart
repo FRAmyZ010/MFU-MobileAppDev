@@ -13,34 +13,32 @@ class BakingApp extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          //Image
           Expanded(
-            flex: 6, //ใช้แบ่งสัดส่วนพื้นที่ 60%
-            child: Image.asset('assets/images/baking.jpg', fit: BoxFit.cover),
+            flex: 6,
+            child: Image.asset("assets/images/baking.jpg", fit: BoxFit.cover),
           ),
-          // Text with button
+          Spacer(),
           Expanded(
-            flex: 4, // ใช้แบ่งสัดส่วนพื้นที่ 40 %
+            flex: 4,
             child: Column(
               children: [
-                Spacer(),
                 Text(
-                  "Baking lessons".toUpperCase(),
+                  "Baking Lessons".toUpperCase(),
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.bold,
                     fontSize: 28,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  "Master the art of baking".toUpperCase(),
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  "master the art of baking".toUpperCase(),
+                  style: TextStyle(color: Colors.white, fontSize: 24),
                 ),
                 Spacer(),
                 FilledButton.icon(
                   onPressed: () {},
                   label: Text(
-                    "Start Learning".toUpperCase(),
+                    "start learning".toUpperCase(),
                     style: TextStyle(color: bgColor),
                   ),
                   icon: Icon(Icons.arrow_forward, color: bgColor),
